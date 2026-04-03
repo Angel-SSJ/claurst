@@ -9,6 +9,56 @@ edition.workspace = true
 # returns an error instead of accessing hardware.
 voice = ["dep:cpal"]
 
+# Experimental/feature-flagged capabilities for free-code builds
+default = ["voice"]
+
+# Interaction & UI features
+ultraplan = []
+ultrathink = []
+history_picker = []
+token_budget = []
+message_actions = []
+quick_search = []
+away_summary = []
+hook_prompts = []
+
+# Agents & Memory features
+agent_triggers = []
+agent_triggers_remote = []
+extract_memories = []
+verification_agent = []
+builtin_explore_plan_agents = []
+cached_microcompact = []
+compaction_reminders = []
+agent_memory_snapshot = []
+teammem = []
+
+# Tools & Infrastructure features
+bash_classifier = []
+bridge_mode = []
+mcp_rich_output = []
+connector_text = []
+unattended_retry = []
+new_init = []
+powershell_auto_mode = []
+shot_stats = []
+tree_sitter_bash = []
+prompt_cache_break_detection = []
+
+# Full dev build — includes all experimental features
+dev_full = [
+    "voice",
+    "ultraplan", "ultrathink", "history_picker",
+    "token_budget", "message_actions", "quick_search", "away_summary",
+    "hook_prompts", "agent_triggers", "agent_triggers_remote",
+    "extract_memories", "verification_agent", "builtin_explore_plan_agents",
+    "cached_microcompact", "compaction_reminders", "agent_memory_snapshot",
+    "teammem", "bash_classifier", "bridge_mode", "mcp_rich_output",
+    "connector_text", "unattended_retry", "new_init",
+    "powershell_auto_mode", "shot_stats", "tree_sitter_bash",
+    "prompt_cache_break_detection",
+]
+
 [dependencies]
 tokio = { workspace = true }
 serde = { workspace = true }
